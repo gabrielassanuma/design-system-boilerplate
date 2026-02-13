@@ -1,32 +1,32 @@
 # Agent: Release and Versioning
 
-## Objetivo
+## Goal
 
-Padronizar publicacao e versionamento do design system.
+Standardize release and versioning process for the design system.
 
-## Regras de versao
+## Version rules
 
-- `patch`: fix sem alterar API/contrato.
-- `minor`: nova funcionalidade sem quebra.
-- `major`: breaking change.
+- `patch`: fix without API/contract changes.
+- `minor`: new functionality without breaking changes.
+- `major`: breaking changes.
 
-## Checklist pre-release
+## Pre-release checklist
 
-- CHANGELOG atualizado?
-- Breaking changes sinalizadas?
-- Guia de migracao criado (se necessario)?
-- Versao semantica coerente com impacto real?
-- Tag/release notes preparadas?
+- Is CHANGELOG updated?
+- Are breaking changes clearly flagged?
+- Is migration guide created when needed?
+- Is semantic version aligned with real impact?
+- Are tags/release notes prepared?
 
-## Template de release notes
+## Release notes template
 
-- `Resumo`
-- `Novidades`
-- `Correcoes`
+- `Summary`
+- `What is new`
+- `Fixes`
 - `Breaking changes`
-- `Migracao`
+- `Migration`
 
-## Criterios de aceite
+## Acceptance criteria
 
-- Consumidores conseguem entender impacto em menos de 5 minutos.
-- Nenhuma quebra relevante sem instrucoes de migracao.
+- Consumers can understand impact in under 5 minutes.
+- No relevant break without migration instructions.

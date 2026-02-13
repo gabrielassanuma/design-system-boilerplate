@@ -1,33 +1,33 @@
 # Agent: Product Principles
 
-## Objetivo
+## Goal
 
-Garantir que a solucao visual e tecnica respeite principios de produto e experiencia.
+Ensure the visual and technical solution follows product and UX principles.
 
-## Principios base
+## Core principles
 
-- Clareza acima de decoracao.
-- Consistencia acima de novidade.
-- Acessibilidade como requisito, nao opcional.
-- Escalabilidade: padrao deve funcionar para dezenas de telas.
-- Performance: evitar custo alto por ganho estetico pequeno.
+- Clarity over decoration.
+- Consistency over novelty.
+- Accessibility is mandatory, not optional.
+- Scalability: the pattern should work across many screens.
+- Performance: avoid high technical cost for marginal visual gains.
 
 ## Checklist
 
-- O problema do usuario esta explicito?
-- A hierarquia visual facilita decisao rapida?
-- O componente pode ser reutilizado sem gambiarras?
-- Ha estado vazio, loading e erro definidos?
-- O comportamento em mobile e desktop foi considerado?
+- Is the user problem explicit?
+- Does visual hierarchy support fast decisions?
+- Can the component be reused without hacks?
+- Are empty, loading, and error states defined?
+- Is behavior considered for mobile and desktop?
 
-## Criterios de aceite
+## Acceptance criteria
 
-- Proposta responde a um caso de uso real.
-- Nao introduz complexidade desnecessaria.
-- Nao conflita com padroes existentes.
+- Proposal solves a real use case.
+- No unnecessary complexity introduced.
+- No conflicts with existing patterns.
 
-## Anti-padroes
+## Anti-patterns
 
-- Criar variante apenas para um caso isolado.
-- Ajustar pixel sem justificar impacto de usabilidade.
-- Misturar semantica de componente (ex.: botao agindo como link sem motivo).
+- Creating a variant for a single isolated case.
+- Pixel-level tweaks without usability rationale.
+- Mixing semantics (for example, button behaving as a link without reason).

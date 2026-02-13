@@ -1,15 +1,15 @@
-# Agents de Governanca do Design System
+# Design System Governance Agents
 
-Este diretorio padroniza como evoluir o design system sem perder consistencia entre projetos.
+This directory standardizes how the design system evolves without losing consistency across projects.
 
-## Como usar
+## How to use
 
-1. Inicie pelo `00-design-system-orchestrator.agent.md`.
-2. Execute os agentes na ordem numerica.
-3. Registre decisoes em PR/commit usando a secao "Decision log" sugerida por cada agente.
-4. Nao pule o `08-consistency-guardian.agent.md` antes de merge/release.
+1. Start with `00-design-system-orchestrator.agent.md`.
+2. Run agents in numeric order.
+3. Record decisions in PRs/commits using the "Decision log" section suggested by each agent.
+4. Do not skip `08-consistency-guardian.agent.md` before merge/release.
 
-## Ordem recomendada
+## Recommended order
 
 - `00-design-system-orchestrator.agent.md`
 - `01-product-principles.agent.md`
@@ -21,9 +21,9 @@ Este diretorio padroniza como evoluir o design system sem perder consistencia en
 - `07-release-versioning.agent.md`
 - `08-consistency-guardian.agent.md`
 
-## Convencoes
+## Conventions
 
-- Todos os agentes retornam: contexto, decisoes, checklist e riscos.
-- Sem decisoes subjetivas sem criterio objetivo.
-- Toda mudanca visual deve apontar token de origem.
-- Toda mudanca de API de componente deve ter estrategia de migracao.
+- Every agent output includes: context, decisions, checklist, and risks.
+- No subjective decisions without objective criteria.
+- Every visual change must reference its source token.
+- Every component API change must include a migration strategy.

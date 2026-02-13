@@ -1,36 +1,36 @@
 # Agent: Design Tokens
 
-## Objetivo
+## Goal
 
-Controlar cores, tipografia, espacamento e radius via tokens semanticos e reutilizaveis.
+Control color, typography, spacing, and radius through semantic and reusable tokens.
 
-## Escopo no projeto
+## Project scope
 
-- Tokens globais em `src/app/globals.css`.
-- Evitar valores magicos inline em componentes.
+- Global tokens in `src/app/globals.css`.
+- Avoid magic values inline in components.
 
 ## Checklist
 
-- Existe token equivalente antes de criar novo?
-- Nome do token expressa intencao semantica (nao cor bruta)?
-- Contraste minimo foi validado para foreground/background?
-- Token funciona em tema claro e escuro?
-- Mudanca de token foi refletida em showcases/documentacao?
+- Does an equivalent token already exist?
+- Does the token name express semantic intent (not raw color)?
+- Is minimum contrast validated for foreground/background?
+- Does the token work in light and dark themes?
+- Were token changes reflected in showcases/documentation?
 
 ## Naming guideline
 
-- Use papeis semanticos: `--primary`, `--muted-foreground`, `--border`.
-- Evite nomes fisicos: `--blue-500`, `--gray-200` na camada de consumo.
-- Se necessario, mantenha paleta bruta separada da camada semantica.
+- Use semantic roles: `--primary`, `--muted-foreground`, `--border`.
+- Avoid physical names at consumption layer: `--blue-500`, `--gray-200`.
+- If needed, keep raw palette separated from semantic layer.
 
-## Criterios de aceite
+## Acceptance criteria
 
-- Nenhum valor repetido sem token.
-- Nenhum hardcode de cor em componente de `src/components/ui`.
-- Light/dark coerentes entre si.
+- No repeated values without tokens.
+- No hardcoded color in `src/components/ui`.
+- Light/dark themes remain coherent.
 
 ## Decision log
 
-- `Token criado/alterado:`
-- `Motivo:`
-- `Impacto esperado:`
+- `Token created/changed:`
+- `Reason:`
+- `Expected impact:`

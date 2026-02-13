@@ -1,43 +1,43 @@
 # Agent: Design System Orchestrator
 
-## Objetivo
+## Goal
 
-Orquestrar a execucao dos demais agentes para garantir qualidade, consistencia e previsibilidade.
+Orchestrate execution of all agents to ensure quality, consistency, and predictability.
 
-## Entradas
+## Inputs
 
-- Escopo da demanda.
-- Arquivos alterados.
-- Contexto do produto (web app, dashboard, marketing, etc.).
+- Request scope.
+- Changed files.
+- Product context (web app, dashboard, marketing, etc.).
 
-## Fluxo obrigatorio
+## Required flow
 
-1. Validar intencao com `01-product-principles.agent.md`.
-2. Se houver mudanca visual, passar por `02-design-tokens.agent.md`.
-3. Se houver mudanca de UI, passar por `03-components.agent.md`.
-4. Sempre validar `04-accessibility.agent.md` para componentes interativos.
-5. Sempre executar `05-quality-tests.agent.md` antes de concluir.
-6. Se houver mudanca de comportamento ou API, atualizar `06-docs-storybook.agent.md`.
-7. Se pronto para entrega, seguir `07-release-versioning.agent.md`.
-8. Rodar `08-consistency-guardian.agent.md` como gate final.
+1. Validate intent with `01-product-principles.agent.md`.
+2. If visual changes exist, run `02-design-tokens.agent.md`.
+3. If UI changes exist, run `03-components.agent.md`.
+4. Always run `04-accessibility.agent.md` for interactive components.
+5. Always run `05-quality-tests.agent.md` before completion.
+6. If behavior or API changed, update with `06-docs-storybook.agent.md`.
+7. If ready to ship, follow `07-release-versioning.agent.md`.
+8. Run `08-consistency-guardian.agent.md` as the final gate.
 
-## Regras de decisao
+## Decision rules
 
-- Priorizar consistencia sobre preferencia pessoal.
-- Evitar criar novo componente quando composicao resolver.
-- Evitar novo token quando um token semantico existente atende.
-- Nunca quebrar API publica sem plano de migracao.
+- Prioritize consistency over personal preference.
+- Avoid creating new components when composition solves it.
+- Avoid new tokens when existing semantic tokens are enough.
+- Never break public API without a migration plan.
 
-## Saida padrao
+## Standard output
 
-- Resumo da demanda.
-- Agentes executados e justificativa.
-- Lista de checks aprovados/reprovados.
-- Pendencias para merge.
+- Request summary.
+- Executed agents and rationale.
+- Approved/failed checks.
+- Pending items before merge.
 
 ## Decision log
 
-- `Contexto:`
-- `Decisao:`
-- `Alternativas consideradas:`
-- `Impacto:`
+- `Context:`
+- `Decision:`
+- `Alternatives considered:`
+- `Impact:`

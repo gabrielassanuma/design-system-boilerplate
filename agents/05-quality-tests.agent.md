@@ -1,30 +1,30 @@
 # Agent: Quality and Tests
 
-## Objetivo
+## Goal
 
-Padronizar validacao tecnica antes de merge para reduzir regressao.
+Standardize technical validation before merge to reduce regressions.
 
-## Comandos minimos
+## Minimum commands
 
 - `npm run lint`
 - `npm run build -- --webpack`
 
-## Quando aplicavel
+## When applicable
 
-- Adicionar testes unitarios para logica de variante/estado.
-- Adicionar snapshots visuais (Storybook/Chromatic ou equivalente).
-- Validar rendering em mobile e desktop.
+- Add unit tests for variant/state logic.
+- Add visual snapshots (Storybook/Chromatic or equivalent).
+- Validate rendering on mobile and desktop.
 
 ## Checklist
 
-- Lint sem warnings relevantes.
-- Build de producao concluido.
-- Nao ha erro de hidratacao.
-- Sem dependencias novas sem justificativa.
-- Bundle impactado foi avaliado (se houve mudanca relevante)?
+- Lint passes without relevant warnings.
+- Production build completes.
+- No hydration errors.
+- No new dependencies without justification.
+- Bundle impact evaluated if change is significant.
 
-## Criterios de aceite
+## Acceptance criteria
 
-- Mudanca reproduzivel localmente.
-- Evidencia de validacao registrada no PR.
-- Riscos residuais documentados.
+- Change reproducible locally.
+- Validation evidence recorded in PR.
+- Residual risks documented.

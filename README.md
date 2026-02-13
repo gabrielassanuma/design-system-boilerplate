@@ -1,6 +1,6 @@
 # Design System Boilerplate
 
-Base com Next.js + shadcn/ui para acelerar criacao de design systems com consistencia.
+Base with Next.js + shadcn/ui to accelerate design system creation with consistency.
 
 ## Getting Started
 
@@ -20,13 +20,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
-## Agents de Padronizacao
+## Standardization Agents
 
-Este repositorio inclui agentes em Markdown para manter equilibrio tecnico e visual entre projetos de design system.
+This repository includes Markdown agents to maintain technical and visual consistency across design system projects.
 
-- Diretorio: `agents/`
-- Entrada principal: `agents/README.md`
-- Fluxo recomendado: iniciar por `agents/00-design-system-orchestrator.agent.md`
+- Directory: `agents/`
+- Main entry: `agents/README.md`
+- Recommended flow: start with `agents/00-design-system-orchestrator.agent.md`
 
 ## Learn More
 

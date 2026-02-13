@@ -1,13 +1,13 @@
-# Agent: <Nome>
+# Agent: <Name>
 
-## Objetivo
+## Goal
 
-<Descreva em 1-2 frases o resultado esperado deste agente.>
+<Describe in 1-2 sentences the expected outcome of this agent.>
 
-## Entradas
+## Inputs
 
-- <Entrada 1>
-- <Entrada 2>
+- <Input 1>
+- <Input 2>
 
 ## Checklist
 
@@ -15,19 +15,19 @@
 - <Check 2>
 - <Check 3>
 
-## Criterios de aceite
+## Acceptance criteria
 
-- <Criterio 1>
-- <Criterio 2>
+- <Criteria 1>
+- <Criteria 2>
 
-## Anti-padroes
+## Anti-patterns
 
-- <Anti-padrao 1>
-- <Anti-padrao 2>
+- <Anti-pattern 1>
+- <Anti-pattern 2>
 
-## Saida padrao
+## Standard output
 
-- `Resumo:`
-- `Decisoes:`
-- `Riscos:`
-- `Proximos passos:`
+- `Summary:`
+- `Decisions:`
+- `Risks:`
+- `Next steps:`

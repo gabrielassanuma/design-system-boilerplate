@@ -1,32 +1,32 @@
 # Agent: Components
 
-## Objetivo
+## Goal
 
-Manter API dos componentes consistente, previsivel e composicional.
+Keep component APIs consistent, predictable, and composable.
 
-## Estrutura esperada
+## Expected structure
 
-- Componentes base em `src/components/ui`.
-- Utilitarios compartilhados em `src/lib`.
-- Variantes controladas por `class-variance-authority` quando fizer sentido.
+- Base components in `src/components/ui`.
+- Shared utilities in `src/lib`.
+- Variants controlled with `class-variance-authority` when appropriate.
 
 ## Checklist
 
-- Nome do componente segue padrao da biblioteca?
-- Props sao minimas e coerentes?
-- Variante adicionada resolve mais de um caso real?
-- Estados (`disabled`, `loading`, `error`) estao cobertos quando aplicavel?
-- Componente preserva acessibilidade nativa antes de customizar?
+- Does the component name follow library conventions?
+- Are props minimal and coherent?
+- Does a new variant solve more than one real case?
+- Are states (`disabled`, `loading`, `error`) covered when applicable?
+- Does the component preserve native accessibility before customization?
 
 ## API guardrails
 
-- Evite props booleanas ambiguas.
-- Prefira composicao a combinacoes explosivas de variantes.
-- Nao exponha detalhes de implementacao interna.
-- Garanta compatibilidade com `asChild` quando aplicavel.
+- Avoid ambiguous boolean props.
+- Prefer composition over exploding variant combinations.
+- Do not expose internal implementation details.
+- Ensure `asChild` compatibility when applicable.
 
-## Criterios de aceite
+## Acceptance criteria
 
-- API documentada e sem ambiguidades.
-- Classe e variantes sem duplicacao desnecessaria.
-- Sem regressao visual nos cenarios principais.
+- API documented and unambiguous.
+- No unnecessary duplication in classes/variants.
+- No visual regression in core scenarios.

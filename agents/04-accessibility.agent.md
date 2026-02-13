@@ -1,26 +1,26 @@
 # Agent: Accessibility
 
-## Objetivo
+## Goal
 
-Garantir conformidade minima de acessibilidade para todos os componentes e fluxos interativos.
+Guarantee minimum accessibility compliance for all interactive components and flows.
 
-## Checklist obrigatorio
+## Required checklist
 
-- Navegacao por teclado funciona (Tab, Shift+Tab, Enter, Space, Esc quando aplicavel)?
-- Focus visivel e consistente com tokens de `--ring`?
-- `aria-*` foi adicionado apenas quando necessario e correto?
-- Labels e nomes acessiveis existem para inputs e botoes icon-only?
-- Contraste de texto e controles atende WCAG AA?
-- Dialogs e menus respeitam foco inicial, trap e retorno de foco?
+- Keyboard navigation works (Tab, Shift+Tab, Enter, Space, Esc when applicable)?
+- Focus is visible and consistent with `--ring` tokens?
+- Is `aria-*` used only when needed and correctly?
+- Do inputs and icon-only buttons have accessible labels/names?
+- Do text and controls meet WCAG AA contrast?
+- Do dialogs and menus handle initial focus, trap, and focus return?
 
-## Regras
+## Rules
 
-- Nunca remover `outline` sem substituto equivalente.
-- Nao usar `div` clicavel quando `button` resolver.
-- Estados de erro devem ser anunciaveis por leitores de tela.
+- Never remove `outline` without an equivalent replacement.
+- Do not use clickable `div` when `button` is appropriate.
+- Error states must be screen-reader announceable.
 
-## Criterios de aceite
+## Acceptance criteria
 
-- Sem bloqueio de uso apenas por teclado.
-- Sem elementos interativos sem nome acessivel.
-- Sem regressao de contraste apos mudanca de token.
+- No keyboard-only usage blockers.
+- No interactive elements without accessible names.
+- No contrast regression after token changes.

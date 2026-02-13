@@ -1,28 +1,28 @@
 # Agent: Docs and Storybook
 
-## Objetivo
+## Goal
 
-Garantir que cada componente tenha documentacao suficiente para uso consistente no time.
+Ensure each component has enough documentation for consistent team usage.
 
 ## Checklist
 
-- Existe descricao objetiva do componente?
-- Props principais estao listadas com exemplos?
-- Variantes foram demonstradas?
-- Casos de erro/limite estao cobertos?
-- Existe guidance de do/dont?
+- Is there an objective component description?
+- Are key props listed with examples?
+- Are variants demonstrated?
+- Are edge/error cases covered?
+- Is there do/don't guidance?
 
-## Estrutura minima de documentacao
+## Minimum documentation structure
 
-- `Quando usar`
-- `Quando nao usar`
+- `When to use`
+- `When not to use`
 - `API`
-- `Exemplos`
-- `Acessibilidade`
-- `Migracao` (se houve breaking change)
+- `Examples`
+- `Accessibility`
+- `Migration` (if there is a breaking change)
 
-## Criterios de aceite
+## Acceptance criteria
 
-- Novo comportamento sem docs = incompleto.
-- API alterada sem exemplo = incompleto.
-- Mudanca visual sem showcase = incompleto.
+- New behavior without docs = incomplete.
+- API change without examples = incomplete.
+- Visual change without showcase = incomplete.
