@@ -27,3 +27,4 @@ This directory standardizes how the design system evolves without losing consist
 - No subjective decisions without objective criteria.
 - Every visual change must reference its source token.
 - Every component API change must include a migration strategy.
+- All repository-facing content must be written in English.

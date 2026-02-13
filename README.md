@@ -1,44 +1,148 @@
 # Design System Boilerplate
 
-Base with Next.js + shadcn/ui to accelerate design system creation with consistency.
+Boilerplate to accelerate MVP delivery with a solid design system foundation using Next.js + shadcn/ui, with emphasis on consistency, accessibility, and fast iteration.
 
-## Getting Started
+## Purpose
 
-First, run the development server:
+This project is meant to be cloned/forked and reused across multiple MVPs so teams do not restart from zero for:
+
+- tokens and theming (light/dark)
+- reusable base components
+- navigation and layout patterns
+- quality governance with agents
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui + Radix primitives
+- class-variance-authority (`cva`) for variants
+
+## How To Use This Boilerplate
+
+### 1. Create A New Project From This Repo
+
+Use this repository as a template/fork for each new MVP.
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run In Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Core Commands
 
-## Standardization Agents
+```bash
+npm run dev
+npm run lint
+npm run typecheck
+npm run build -- --webpack
+```
 
-This repository includes Markdown agents to maintain technical and visual consistency across design system projects.
+## Project Structure
 
-- Directory: `agents/`
-- Main entry: `agents/README.md`
-- Recommended flow: start with `agents/00-design-system-orchestrator.agent.md`
+```text
+src/
+  app/
+    globals.css                 # global tokens, theme, and utilities
+    page.tsx                    # design system showcase/base page
+    layout.tsx
+  components/
+    ui/                         # base design system primitives
+    navigation/                 # navigation/layout patterns
+  lib/
+    utils.ts                    # cn() utility
+agents/                         # governance and decision workflow
+```
 
-## Learn More
+## Recommended Workflow For A New MVP
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Define Visual Identity Through Tokens
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Edit `src/app/globals.css`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- semantic colors (`--primary`, `--muted`, `--destructive`, etc.)
+- typography (`--font-sans-ui`, `--font-mono-ui`)
+- radius, borders, and surface tokens
 
-## Deploy on Vercel
+Avoid hardcoded colors directly in components; prefer semantic tokens.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Build Layouts With Existing Patterns
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use blocks from `src/components/navigation` as your baseline:
+
+- app shell
+- topbar
+- sidebar desktop/mobile
+- command palette
+
+### 3. Reuse/Extend Base Components
+
+Components live in `src/components/ui`. Prioritize:
+
+- composition instead of creating one-off variants
+- simple and predictable APIs
+- preserving native accessibility behavior
+
+### 4. Add New Components With shadcn
+
+```bash
+npm exec shadcn add <component-name>
+```
+
+Example:
+
+```bash
+npm exec shadcn add tooltip
+```
+
+## Quality: Risk-Based Policy (MVP-Friendly)
+
+Required baseline for every change:
+
+- `npm run lint`
+- `npm run typecheck`
+- `npm run build -- --webpack`
+
+Unit tests are required when there is real risk:
+
+- stateful logic (filtering, pagination, sorting, async states)
+- keyboard/focus interactions
+- critical conditional rendering
+- shared primitives reused across multiple screens/products
+
+For low-risk cosmetic updates, prioritize speed with minimal validation evidence.
+
+## Governance Agents
+
+The `agents/` directory defines evolution rules to avoid design system drift.
+
+- main entry point: `agents/00-design-system-orchestrator.agent.md`
+- full flow: `agents/README.md`
+- final gate: `agents/08-consistency-guardian.agent.md`
+
+## Contribution Conventions
+
+- every visual change must reference tokens
+- every component API change must include a migration strategy
+- avoid increasing complexity without clear reuse value
+- all repository-facing content (code comments, docs, agent files, UI copy defaults) must be in English
+
+## Deploy
+
+Recommended default deployment platform: Vercel.
+
+- build command: `npm run build`
+- start command: `npm run start`
+
+This project also runs on any platform that supports Next.js.
