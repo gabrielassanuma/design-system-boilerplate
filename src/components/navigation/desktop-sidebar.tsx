@@ -1,39 +1,8 @@
 import Link from "next/link"
-import {
-  BarChart3Icon,
-  ComponentIcon,
-  FolderKanbanIcon,
-  HomeIcon,
-  LayersIcon,
-  LifeBuoyIcon,
-  SettingsIcon,
-  ShieldCheckIcon,
-} from "lucide-react"
 
+import { primaryNavItems, supportNavItems } from "@/components/navigation/nav-items"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-
-type NavItem = {
-  href: string
-  label: string
-  icon: React.ComponentType<{ className?: string }>
-  isActive?: boolean
-  badge?: string
-}
-
-const primaryItems: NavItem[] = [
-  { href: "#", label: "Overview", icon: HomeIcon, isActive: true },
-  { href: "#", label: "Components", icon: ComponentIcon, badge: "24" },
-  { href: "#", label: "Tokens", icon: LayersIcon },
-  { href: "#", label: "Templates", icon: FolderKanbanIcon },
-  { href: "#", label: "Analytics", icon: BarChart3Icon },
-]
-
-const supportItems: NavItem[] = [
-  { href: "#", label: "Quality Gates", icon: ShieldCheckIcon },
-  { href: "#", label: "Support", icon: LifeBuoyIcon },
-  { href: "#", label: "Settings", icon: SettingsIcon },
-]
 
 export function DesktopSidebar() {
   return (
@@ -44,8 +13,8 @@ export function DesktopSidebar() {
       </div>
 
       <p className="mb-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">Main</p>
-      <nav className="space-y-1">
-        {primaryItems.map((item) => (
+      <nav className="space-y-1" aria-label="Primary">
+        {primaryNavItems.map((item) => (
           <Link
             key={item.label}
             href={item.href}
@@ -68,8 +37,8 @@ export function DesktopSidebar() {
       <div className="my-4 border-t" />
 
       <p className="mb-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">System</p>
-      <nav className="space-y-1">
-        {supportItems.map((item) => (
+      <nav className="space-y-1" aria-label="System">
+        {supportNavItems.map((item) => (
           <Link
             key={item.label}
             href={item.href}

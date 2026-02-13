@@ -30,7 +30,7 @@ export function DesktopCommandPalette({ open, onOpenChange }: DesktopCommandPale
     <CommandDialog
       open={open}
       onOpenChange={onOpenChange}
-      title="Desktop Navigation"
+      title="Navigation"
       description="Search routes, docs, and component pages"
     >
       <CommandInput placeholder="Search routes and commands..." />
