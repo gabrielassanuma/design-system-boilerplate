@@ -84,6 +84,10 @@
   --sidebar-accent-foreground: #042a2f;
   --sidebar-border: #e6d5b5;
   --sidebar-ring: #2b9e90;
+  --surface-ambient:
+    radial-gradient(circle at 10% 0%, color-mix(in oklab, var(--primary) 24%, transparent), transparent 40%),
+    radial-gradient(circle at 90% 20%, color-mix(in oklab, var(--chart-2) 20%, transparent), transparent 35%),
+    linear-gradient(to bottom, color-mix(in oklab, var(--background) 90%, var(--muted) 10%), var(--background));
 }
 
 .dark {
@@ -119,6 +123,10 @@
   --sidebar-accent-foreground: #3a2f16;
   --sidebar-border: #1f5a64;
   --sidebar-ring: #e8c368;
+  --surface-ambient:
+    radial-gradient(circle at 12% 2%, color-mix(in oklab, var(--primary) 20%, transparent), transparent 42%),
+    radial-gradient(circle at 88% 18%, color-mix(in oklab, var(--chart-3) 14%, transparent), transparent 38%),
+    linear-gradient(to bottom, color-mix(in oklab, var(--background) 94%, var(--muted) 6%), var(--background));
 }
 
 @layer base {
@@ -127,5 +135,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .ds-ambient-surface {
+    background: var(--surface-ambient);
   }
 }

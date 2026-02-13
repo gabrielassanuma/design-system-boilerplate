@@ -85,11 +85,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <div
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(circle at 10% 0%, color-mix(in oklab, var(--primary) 24%, transparent), transparent 40%), radial-gradient(circle at 90% 20%, color-mix(in oklab, var(--chart-2) 20%, transparent), transparent 35%), linear-gradient(to bottom, color-mix(in oklab, var(--background) 90%, var(--muted) 10%), var(--background))",
-        }}
+        className="ds-ambient-surface pointer-events-none absolute inset-0 -z-10"
       />
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-10 md:px-8">
         <header
