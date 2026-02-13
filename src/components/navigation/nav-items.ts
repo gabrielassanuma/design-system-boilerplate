@@ -19,15 +19,15 @@ export type NavItem = {
 }
 
 export const primaryNavItems: NavItem[] = [
-  { href: "#", label: "Overview", icon: HomeIcon, isActive: true },
-  { href: "#", label: "Components", icon: ComponentIcon, badge: "24" },
-  { href: "#", label: "Tokens", icon: LayersIcon },
-  { href: "#", label: "Templates", icon: FolderKanbanIcon },
-  { href: "#", label: "Analytics", icon: BarChart3Icon },
+  { href: "/#overview", label: "Overview", icon: HomeIcon, isActive: true },
+  { href: "/#components-showcase", label: "Components", icon: ComponentIcon, badge: "24" },
+  { href: "/#tokens", label: "Tokens", icon: LayersIcon },
+  { href: "/#plans", label: "Templates", icon: FolderKanbanIcon },
+  { href: "/#docs-tabs", label: "Analytics", icon: BarChart3Icon },
 ]
 
 export const supportNavItems: NavItem[] = [
-  { href: "#", label: "Quality Gates", icon: ShieldCheckIcon },
-  { href: "#", label: "Support", icon: LifeBuoyIcon },
-  { href: "#", label: "Settings", icon: SettingsIcon },
+  { href: "/#desktop-app-shell", label: "Quality Gates", icon: ShieldCheckIcon },
+  { href: "/#banner-patterns", label: "Support", icon: LifeBuoyIcon },
+  { href: "/#form-controls", label: "Settings", icon: SettingsIcon },
 ]

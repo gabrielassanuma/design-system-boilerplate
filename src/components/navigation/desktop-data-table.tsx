@@ -159,8 +159,7 @@ export function DesktopDataTable() {
   }
 
   const onPaginationClick =
-    (nextPage: number) => (event: React.MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault()
+    (nextPage: number) => () => {
       setPage(nextPage)
     }
 
@@ -299,14 +298,13 @@ export function DesktopDataTable() {
           <Pagination>
             <PaginationContent>
               <PaginationItem>
-                <PaginationPrevious href="#" onClick={onPaginationClick(Math.max(1, safePage - 1))} />
+                <PaginationPrevious onClick={onPaginationClick(Math.max(1, safePage - 1))} />
               </PaginationItem>
 
               {pageItems.map((item) =>
                 typeof item === "number" ? (
                   <PaginationItem key={`page-${item}`}>
                     <PaginationLink
-                      href="#"
                       isActive={item === safePage}
                       onClick={onPaginationClick(item)}
                     >
@@ -321,10 +319,7 @@ export function DesktopDataTable() {
               )}
 
               <PaginationItem>
-                <PaginationNext
-                  href="#"
-                  onClick={onPaginationClick(Math.min(totalPages, safePage + 1))}
-                />
+                <PaginationNext onClick={onPaginationClick(Math.min(totalPages, safePage + 1))} />
               </PaginationItem>
             </PaginationContent>
           </Pagination>

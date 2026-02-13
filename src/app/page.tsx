@@ -92,7 +92,10 @@ export default function Home() {
         }}
       />
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-10 md:px-8">
-        <header className="space-y-4 rounded-2xl border bg-card/70 p-6 backdrop-blur md:p-8">
+        <header
+          id="overview"
+          className="scroll-mt-20 space-y-4 rounded-2xl border bg-card/70 p-6 backdrop-blur md:p-8"
+        >
           <div className="flex flex-wrap items-center gap-3">
             <Badge variant="secondary">Next.js + shadcn/ui</Badge>
             <Badge variant="outline">Starter Kit</Badge>
@@ -141,7 +144,7 @@ export default function Home() {
 
         <Separator />
 
-        <section className="space-y-4">
+        <section id="desktop-app-shell" className="scroll-mt-20 space-y-4">
           <div className="space-y-1">
             <h2 className="text-xl font-semibold">Desktop App Shell</h2>
             <p className="text-sm text-muted-foreground">
@@ -181,7 +184,7 @@ export default function Home() {
           </AppShell>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
+        <section id="components-showcase" className="scroll-mt-20 grid gap-6 lg:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>Badge Variants</CardTitle>
@@ -204,7 +207,7 @@ export default function Home() {
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link href="#">
+                      <Link href="/#overview">
                         <HomeIcon className="size-3.5" />
                         Home
                       </Link>
@@ -213,7 +216,7 @@ export default function Home() {
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link href="#">Design System</Link>
+                      <Link href="/#components-showcase">Design System</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
@@ -226,13 +229,13 @@ export default function Home() {
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link href="#">Docs</Link>
+                      <Link href="/#docs-tabs">Docs</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link href="#">Patterns</Link>
+                      <Link href="/#desktop-app-shell">Patterns</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
@@ -245,7 +248,7 @@ export default function Home() {
           </Card>
         </section>
 
-        <Card>
+        <Card id="banner-patterns" className="scroll-mt-20">
           <CardHeader>
             <CardTitle>Banner Patterns</CardTitle>
             <CardDescription>Inline communication for status and actionable updates.</CardDescription>
@@ -287,7 +290,7 @@ export default function Home() {
           </CardContent>
         </Card>
 
-        <section className="grid gap-6 lg:grid-cols-[2fr_1fr]">
+        <section id="tokens" className="scroll-mt-20 grid gap-6 lg:grid-cols-[2fr_1fr]">
           <Card>
             <CardHeader>
               <CardTitle>Color Tokens</CardTitle>
@@ -310,7 +313,7 @@ export default function Home() {
               ))}
             </CardContent>
           </Card>
-          <Card>
+          <Card id="form-controls" className="scroll-mt-20">
             <CardHeader>
               <CardTitle>Radius Tokens</CardTitle>
               <CardDescription>Consistency for corners and surfaces.</CardDescription>
@@ -361,7 +364,7 @@ export default function Home() {
           </Card>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-3">
+        <section id="plans" className="scroll-mt-20 grid gap-6 lg:grid-cols-3">
           {cardSamples.map((plan) => (
             <Card key={plan.name}>
               <CardHeader>
@@ -382,7 +385,7 @@ export default function Home() {
           ))}
         </section>
 
-        <Card>
+        <Card id="docs-tabs" className="scroll-mt-20">
           <CardHeader>
             <CardTitle>Tabs Pattern</CardTitle>
             <CardDescription>Example pattern for documenting components.</CardDescription>
