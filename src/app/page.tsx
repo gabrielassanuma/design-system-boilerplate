@@ -50,7 +50,7 @@ const colorTokens = [
   { name: "Secondary", variable: "--secondary", on: "--secondary-foreground" },
   { name: "Accent", variable: "--accent", on: "--accent-foreground" },
   { name: "Muted", variable: "--muted", on: "--muted-foreground" },
-  { name: "Destructive", variable: "--destructive", on: "--primary-foreground" },
+  { name: "Destructive", variable: "--destructive", on: "--destructive-foreground" },
 ]
 
 const radiusTokens = [
