@@ -60,8 +60,9 @@ export default function Home() {
             Design System Foundation
           </h1>
           <p className="max-w-3xl text-sm text-muted-foreground md:text-base">
-            Base pronta para evoluir escala tipografica, tokens, componentes e documentacao.
-            Este template ja inclui componentes interativos e exemplos visuais para seu sistema.
+            Foundation to evolve typography scale, tokens, components, and documentation.
+            This template already includes interactive components and visual examples for your
+            system.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button>
@@ -70,25 +71,25 @@ export default function Home() {
             </Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">Componente menu</Button>
+                <Button variant="outline">Menu component</Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start">
-                <DropdownMenuLabel>Acoes</DropdownMenuLabel>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Duplicar bloco</DropdownMenuItem>
-                <DropdownMenuItem>Publicar alteracoes</DropdownMenuItem>
-                <DropdownMenuItem variant="destructive">Remover item</DropdownMenuItem>
+                <DropdownMenuItem>Duplicate block</DropdownMenuItem>
+                <DropdownMenuItem>Publish changes</DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">Remove item</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="secondary">Abrir modal</Button>
+                <Button variant="secondary">Open dialog</Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Exemplo de Dialog</DialogTitle>
+                  <DialogTitle>Dialog example</DialogTitle>
                   <DialogDescription>
-                    Use este componente para confirmacoes, fluxos rapidos e onboarding.
+                    Use this component for confirmations, quick flows, and onboarding.
                   </DialogDescription>
                 </DialogHeader>
                 <DialogFooter showCloseButton />
@@ -103,7 +104,7 @@ export default function Home() {
           <Card>
             <CardHeader>
               <CardTitle>Color Tokens</CardTitle>
-              <CardDescription>Papeis de cor iniciais do sistema.</CardDescription>
+              <CardDescription>Initial color roles for the system.</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {colorTokens.map((token) => (
@@ -125,7 +126,7 @@ export default function Home() {
           <Card>
             <CardHeader>
               <CardTitle>Radius Tokens</CardTitle>
-              <CardDescription>Consistencia em cantos e superficies.</CardDescription>
+              <CardDescription>Consistency for corners and surfaces.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               {radiusTokens.map((radius) => (
@@ -145,7 +146,7 @@ export default function Home() {
           <Card>
             <CardHeader>
               <CardTitle>Button Variants</CardTitle>
-              <CardDescription>Estados e hierarquia de acao.</CardDescription>
+              <CardDescription>State and action hierarchy.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-3">
               <Button>Default</Button>
@@ -159,14 +160,14 @@ export default function Home() {
           <Card>
             <CardHeader>
               <CardTitle>Form Controls</CardTitle>
-              <CardDescription>Input + acao primaria em um fluxo curto.</CardDescription>
+              <CardDescription>Input plus a primary action in a short flow.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              <Input placeholder="Digite o nome de um token..." />
+              <Input placeholder="Type a token name..." />
               <div className="flex gap-3">
-                <Button className="flex-1">Salvar</Button>
+                <Button className="flex-1">Save</Button>
                 <Button variant="outline" className="flex-1">
-                  Cancelar
+                  Cancel
                 </Button>
               </div>
             </CardContent>
@@ -176,7 +177,7 @@ export default function Home() {
         <Card>
           <CardHeader>
             <CardTitle>Tabs Pattern</CardTitle>
-            <CardDescription>Exemplo de padrao para documentar componentes.</CardDescription>
+            <CardDescription>Example pattern for documenting components.</CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="overview" className="w-full">
@@ -186,13 +187,13 @@ export default function Home() {
                 <TabsTrigger value="a11y">A11y</TabsTrigger>
               </TabsList>
               <TabsContent value="overview" className="rounded-md border bg-background p-4">
-                Defina quando usar cada variante e o nivel de prioridade da acao.
+                Define when to use each variant and the action priority level.
               </TabsContent>
               <TabsContent value="usage" className="rounded-md border bg-background p-4">
-                Descreva API do componente, propriedades e exemplos de composicao.
+                Describe component API, props, and composition examples.
               </TabsContent>
               <TabsContent value="a11y" className="rounded-md border bg-background p-4">
-                Inclua navegacao por teclado, contraste minimo e aria-labels obrigatorios.
+                Include keyboard navigation, minimum contrast, and required aria labels.
               </TabsContent>
             </Tabs>
           </CardContent>

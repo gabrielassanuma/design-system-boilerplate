@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Design System Starter",
-  description: "Base de design system com Next.js e shadcn/ui",
+  description: "Design system foundation with Next.js and shadcn/ui",
 }
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en-US">
       <body className="font-sans antialiased">
         {children}
       </body>
