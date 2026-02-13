@@ -1,6 +1,26 @@
-import { SparklesIcon } from "lucide-react"
+import Link from "next/link"
+import {
+  AlertTriangleIcon,
+  BadgeCheckIcon,
+  BellRingIcon,
+  HomeIcon,
+  SparklesIcon,
+  TicketIcon,
+} from "lucide-react"
 
+import { AppShell } from "@/components/navigation/app-shell"
+import { DesktopDataTable } from "@/components/navigation/desktop-data-table"
+import { PageHeader } from "@/components/navigation/page-header"
 import { Badge } from "@/components/ui/badge"
+import { Banner, BannerActions, BannerDescription, BannerTitle } from "@/components/ui/banner"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -38,6 +58,27 @@ const radiusTokens = [
   { label: "md", value: "calc(var(--radius) - 2px)" },
   { label: "lg", value: "var(--radius)" },
   { label: "xl", value: "calc(var(--radius) + 4px)" },
+]
+
+const cardSamples = [
+  {
+    name: "Starter Plan",
+    price: "$19",
+    description: "Best for small teams shipping internal products.",
+    badge: "Popular",
+  },
+  {
+    name: "Growth Plan",
+    price: "$49",
+    description: "Ideal for scaling design systems across squads.",
+    badge: "Recommended",
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "For advanced governance, support, and integrations.",
+    badge: "Contact Sales",
+  },
 ]
 
 export default function Home() {
@@ -99,6 +140,152 @@ export default function Home() {
         </header>
 
         <Separator />
+
+        <section className="space-y-4">
+          <div className="space-y-1">
+            <h2 className="text-xl font-semibold">Desktop App Shell</h2>
+            <p className="text-sm text-muted-foreground">
+              Topbar, Sidebar, Command Palette, and Pagination working together in one
+              standardized navigation layout.
+            </p>
+          </div>
+
+          <AppShell>
+            <div className="space-y-6">
+              <PageHeader
+                eyebrow="Desktop Patterns"
+                title="Navigation Routes"
+                description="Standardized page header with scoped actions for desktop IA management."
+                actions={
+                  <>
+                    <Button variant="outline" size="sm">
+                      Export CSV
+                    </Button>
+                    <Button size="sm">Create route</Button>
+                  </>
+                }
+              />
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>DataTable</CardTitle>
+                  <CardDescription>
+                    Includes filters, sorting, pagination, and integrated empty/loading/error states.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <DesktopDataTable />
+                </CardContent>
+              </Card>
+            </div>
+          </AppShell>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Badge Variants</CardTitle>
+              <CardDescription>Quick status labels for semantic emphasis.</CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-3">
+              <Badge>Default</Badge>
+              <Badge variant="secondary">Secondary</Badge>
+              <Badge variant="outline">Outline</Badge>
+              <Badge variant="destructive">Critical</Badge>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Breadcrumbs</CardTitle>
+              <CardDescription>Path and hierarchy for deep navigation.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link href="#">
+                        <HomeIcon className="size-3.5" />
+                        Home
+                      </Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link href="#">Design System</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Components</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link href="#">Docs</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link href="#">Patterns</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Navigation</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </CardContent>
+          </Card>
+        </section>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Banner Patterns</CardTitle>
+            <CardDescription>Inline communication for status and actionable updates.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <Banner variant="info">
+              <BellRingIcon className="mt-0.5 size-4" />
+              <div>
+                <BannerTitle>New release available</BannerTitle>
+                <BannerDescription>Version 0.2.0 now includes Breadcrumb and Banner components.</BannerDescription>
+              </div>
+              <BannerActions>
+                <Button size="sm">Read notes</Button>
+              </BannerActions>
+            </Banner>
+
+            <Banner variant="success">
+              <BadgeCheckIcon className="mt-0.5 size-4" />
+              <div>
+                <BannerTitle>Deployment successful</BannerTitle>
+                <BannerDescription>All production checks passed and tokens are in sync.</BannerDescription>
+              </div>
+            </Banner>
+
+            <Banner variant="warning">
+              <AlertTriangleIcon className="mt-0.5 size-4" />
+              <div>
+                <BannerTitle>Action needed</BannerTitle>
+                <BannerDescription>
+                  Review contrast ratio on accent backgrounds before publishing.
+                </BannerDescription>
+              </div>
+              <BannerActions>
+                <Button size="sm" variant="outline">
+                  Open task
+                </Button>
+              </BannerActions>
+            </Banner>
+          </CardContent>
+        </Card>
 
         <section className="grid gap-6 lg:grid-cols-[2fr_1fr]">
           <Card>
@@ -162,9 +349,9 @@ export default function Home() {
               <CardTitle>Form Controls</CardTitle>
               <CardDescription>Input plus a primary action in a short flow.</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3">
+            <CardContent className="space-y-5">
               <Input placeholder="Type a token name..." />
-              <div className="flex gap-3">
+              <div className="flex gap-3 pt-2">
                 <Button className="flex-1">Save</Button>
                 <Button variant="outline" className="flex-1">
                   Cancel
@@ -172,6 +359,27 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-3">
+          {cardSamples.map((plan) => (
+            <Card key={plan.name}>
+              <CardHeader>
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <Badge variant="outline">
+                    <TicketIcon className="size-3.5" />
+                    {plan.badge}
+                  </Badge>
+                  <span className="text-xl font-semibold">{plan.price}</span>
+                </div>
+                <CardTitle>{plan.name}</CardTitle>
+                <CardDescription>{plan.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">Choose plan</Button>
+              </CardContent>
+            </Card>
+          ))}
         </section>
 
         <Card>
