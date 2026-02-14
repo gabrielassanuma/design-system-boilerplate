@@ -179,6 +179,14 @@ export function DesktopDataTable() {
     return [1, "ellipsis", safePage - 1, safePage, safePage + 1, "ellipsis-2", totalPages] as const
   }, [safePage, totalPages])
 
+  const getStatusBadgeClass = (status: RowStatus) =>
+    cn(
+      "w-fit",
+      status === "Stable" && "border-secondary/40 bg-secondary/10",
+      status === "In Review" && "border-accent/40 bg-accent/10",
+      status === "In Progress" && "border-primary/40 bg-primary/10"
+    )
+
   if (viewMode === "loading") {
     return <LoadingState />
   }
@@ -231,6 +239,29 @@ export function DesktopDataTable() {
         ))}
       </div>
 
+      <div className="flex flex-wrap items-center gap-2 md:hidden">
+        <span className="text-xs uppercase tracking-wider text-muted-foreground">Sort by</span>
+        {(
+          [
+            { field: "route", label: "Route" },
+            { field: "status", label: "Status" },
+            { field: "updatedMinutesAgo", label: "Updated" },
+          ] as const
+        ).map((option) => (
+          <Button
+            key={option.field}
+            size="sm"
+            variant={sortField === option.field ? "secondary" : "ghost"}
+            onClick={() => setSort(option.field)}
+          >
+            {option.label}
+            {sortField === option.field ? (
+              <span aria-hidden>{sortDirection === "asc" ? "↑" : "↓"}</span>
+            ) : null}
+          </Button>
+        ))}
+      </div>
+
       {sortedRows.length === 0 ? (
         <EmptyState
           title="No routes match the current filters"
@@ -244,7 +275,7 @@ export function DesktopDataTable() {
       ) : (
         <>
           <div className="overflow-hidden rounded-xl border">
-            <div className="grid grid-cols-[1.8fr_1fr_1fr_0.9fr] border-b bg-muted/45 px-4 py-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            <div className="hidden grid-cols-[1.8fr_1fr_1fr_0.9fr] border-b bg-muted/45 px-4 py-2 text-xs font-medium uppercase tracking-wider text-muted-foreground md:grid">
               <button
                 className="inline-flex items-center gap-1 text-left"
                 onClick={() => setSort("route")}
@@ -269,30 +300,53 @@ export function DesktopDataTable() {
               </button>
             </div>
 
-            {paginatedRows.map((row) => (
-              <div
-                key={`${row.route}-${row.updatedBy}`}
-                className="grid grid-cols-[1.8fr_1fr_1fr_0.9fr] items-center border-b px-4 py-3 text-sm last:border-b-0"
-              >
-                <div className="space-y-0.5">
-                  <p className="font-medium">{row.route}</p>
-                  <p className="text-xs text-muted-foreground">Edited by {row.updatedBy}</p>
+            <div className="divide-y md:hidden">
+              {paginatedRows.map((row) => (
+                <div key={`${row.route}-${row.updatedBy}`} className="space-y-3 px-4 py-3">
+                  <div className="space-y-0.5">
+                    <p className="break-all font-medium">{row.route}</p>
+                    <p className="text-xs text-muted-foreground">Edited by {row.updatedBy}</p>
+                  </div>
+                  <dl className="grid grid-cols-2 gap-3 text-sm">
+                    <div className="space-y-1">
+                      <dt className="text-[11px] uppercase tracking-wider text-muted-foreground">Owner</dt>
+                      <dd>{row.owner}</dd>
+                    </div>
+                    <div className="space-y-1">
+                      <dt className="text-[11px] uppercase tracking-wider text-muted-foreground">Updated</dt>
+                      <dd className="text-muted-foreground">{row.updatedMinutesAgo} min ago</dd>
+                    </div>
+                    <div className="col-span-2 space-y-1">
+                      <dt className="text-[11px] uppercase tracking-wider text-muted-foreground">Status</dt>
+                      <dd>
+                        <Badge variant="outline" className={getStatusBadgeClass(row.status)}>
+                          {row.status}
+                        </Badge>
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
-                <span>{row.owner}</span>
-                <Badge
-                  variant="outline"
-                  className={cn(
-                    "w-fit",
-                    row.status === "Stable" && "border-secondary/40 bg-secondary/10",
-                    row.status === "In Review" && "border-accent/40 bg-accent/10",
-                    row.status === "In Progress" && "border-primary/40 bg-primary/10"
-                  )}
+              ))}
+            </div>
+
+            <div className="hidden md:block">
+              {paginatedRows.map((row) => (
+                <div
+                  key={`${row.route}-${row.updatedBy}`}
+                  className="grid grid-cols-[1.8fr_1fr_1fr_0.9fr] items-center border-b px-4 py-3 text-sm last:border-b-0"
                 >
-                  {row.status}
-                </Badge>
-                <span className="text-muted-foreground">{row.updatedMinutesAgo} min ago</span>
-              </div>
-            ))}
+                  <div className="space-y-0.5">
+                    <p className="font-medium">{row.route}</p>
+                    <p className="text-xs text-muted-foreground">Edited by {row.updatedBy}</p>
+                  </div>
+                  <span>{row.owner}</span>
+                  <Badge variant="outline" className={getStatusBadgeClass(row.status)}>
+                    {row.status}
+                  </Badge>
+                  <span className="text-muted-foreground">{row.updatedMinutesAgo} min ago</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <Pagination>
